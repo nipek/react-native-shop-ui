@@ -35,8 +35,8 @@ export default class Checkout extends Component {
 
   componentWillMount() {
     this.setState({cartItems: this.props.cartItems});
+    let total = 0;
     this.props.cartItems.map((item) => {
-      var total = 0;
       total += parseFloat(item.price) * parseInt(item.quantity);
       this.setState({total: total});
     });
